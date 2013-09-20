@@ -1,0 +1,7 @@
+package com.example.cappo;
+
+import android.view.View;
+
+public class DrawingTheBall extends View {
+	
+}

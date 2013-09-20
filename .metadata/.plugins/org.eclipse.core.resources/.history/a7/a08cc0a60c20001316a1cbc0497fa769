@@ -1,0 +1,13 @@
+package com.example.cappo;
+
+import android.content.Context;
+import android.view.View;
+
+public class DrawingTheBall extends View {
+
+	public DrawingTheBall(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+	
+}

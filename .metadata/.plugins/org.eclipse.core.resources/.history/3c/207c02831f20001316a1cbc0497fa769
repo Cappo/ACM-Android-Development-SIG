@@ -1,0 +1,12 @@
+package com.example.cappo;
+
+import android.graphics.Canvas;
+
+public class Sprite {
+
+	public void onDraw(Canvas canvas) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

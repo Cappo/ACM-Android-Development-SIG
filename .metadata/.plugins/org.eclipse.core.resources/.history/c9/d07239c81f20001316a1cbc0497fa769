@@ -1,0 +1,17 @@
+package com.example.cappo;
+
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+
+public class Sprite {
+
+	public Sprite(OurView ourView, Bitmap blob) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void onDraw(Canvas canvas) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

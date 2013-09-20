@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Main" >
+
+    <Button
+        android:id="@+id/tutorial1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Text Changer" />
+
+    <Button
+        android:id="@+id/tutorial2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tutorial1"
+        android:layout_below="@+id/tutorial1"
+        android:text="List View" />
+
+    <Button
+        android:id="@+id/tutorial3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tutorial2"
+        android:layout_below="@+id/tutorial2"
+        android:text="Background Changer" />
+
+
+    <Button
+        android:id="@+id/tutorial4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tutorial3"
+        android:layout_below="@+id/tutorial3"
+        android:text="Moving Ball" />
+    
+    <Button
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tutorial4"
+        android:layout_below="@+id/tutorial4"
+        android:text="Move Ball via Touch" />
+    
+    
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="195dp"
+        android:layout_below="@+id/surfaceView" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/longText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/long_string" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

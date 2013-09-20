@@ -1,0 +1,28 @@
+package com.example.cappo;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.SurfaceView;
+
+public class SurfaceViewExample extends Activity {
+
+	OurView v;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+
+	public class OurView extends SurfaceView{
+
+		public OurView(Context context) {
+			super(context);
+			// TODO Auto-generated constructor stub
+		}
+		
+	}
+	
+}

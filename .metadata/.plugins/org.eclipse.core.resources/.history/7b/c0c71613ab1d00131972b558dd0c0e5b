@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Style" />
+
+        <TextView
+            android:id="@+id/gravity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Gravity" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+    <RadioGroup
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+        
+	    <RadioButton
+	        android:id="@+id/normal"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Normal" />
+	    <RadioButton
+	        android:id="@+id/italic"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Italic" />
+	    <RadioButton
+	        android:id="@+id/bold"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Bold" />
+	    
+	</RadioGroup>
+	<RadioGroup
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+        
+	    <RadioButton
+	        android:id="@+id/left"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Left" />
+	    <RadioButton
+	        android:id="@+id/right"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Right" />
+	    <RadioButton
+	        android:id="@+id/center"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Center" />
+	    
+	 </RadioGroup>   
+	 </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="Click the button below to change this text!" />
+
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate" />
+
+</LinearLayout>

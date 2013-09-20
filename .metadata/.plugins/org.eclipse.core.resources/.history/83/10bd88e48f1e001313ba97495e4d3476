@@ -1,0 +1,32 @@
+package com.example.cappo;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class Tutorial3 extends Activity implements onClickListener{
+
+	ImageView display;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.wallpaper);
+		
+		display = (ImageView) findViewById(R.id.IVdisplay);
+		ImageView image1 = (ImageView) findViewById(R.id.IVbattlefield);
+		ImageView image2 = (ImageView) findViewById(R.id.IVblack);
+		ImageView image3 = (ImageView) findViewById(R.id.IVblue);
+		ImageView image4 = (ImageView) findViewById(R.id.IVcity);
+		ImageView image5 = (ImageView) findViewById(R.id.IVmountain);
+		ImageView image6 = (ImageView) findViewById(R.id.IVwalle);
+		
+		image1.setOnClickListener(this);
+		image1.setOnClickListener(this);
+		image1.setOnClickListener(this);
+		image1.setOnClickListener(this);
+		image1.setOnClickListener(this);
+		image1.setOnClickListener(this);
+	}
+}

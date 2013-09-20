@@ -1,0 +1,25 @@
+package com.example.cappo;
+
+import com.example.cappo.SurfaceViewExample.OurView;
+
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+
+public class Sprite {
+
+	int x, y, height, width, xSpeed, ySpeed;
+	Bitmap b;
+	OurView ov;
+	
+	public Sprite(OurView ourView, Bitmap blob) {
+		// TODO Auto-generated constructor stub
+		b = blob;
+		ov = ourView;
+	}
+
+	public void onDraw(Canvas canvas) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

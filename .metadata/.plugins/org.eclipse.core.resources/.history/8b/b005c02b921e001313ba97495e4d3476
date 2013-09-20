@@ -1,0 +1,57 @@
+package com.example.cappo;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+
+public class Tutorial3 extends Activity implements OnClickListener{
+
+	ImageView display;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.wallpaper);
+		
+		display = (ImageView) findViewById(R.id.IVdisplay);
+		ImageView image1 = (ImageView) findViewById(R.id.IVbattlefield);
+		ImageView image2 = (ImageView) findViewById(R.id.IVblack);
+		ImageView image3 = (ImageView) findViewById(R.id.IVblue);
+		ImageView image4 = (ImageView) findViewById(R.id.IVcity);
+		ImageView image5 = (ImageView) findViewById(R.id.IVmountain);
+		ImageView image6 = (ImageView) findViewById(R.id.IVwalle);
+		
+		image1.setOnClickListener(this);
+		image2.setOnClickListener(this);
+		image3.setOnClickListener(this);
+		image4.setOnClickListener(this);
+		image5.setOnClickListener(this);
+		image6.setOnClickListener(this);
+	}
+	
+	public void onClick(View v){
+		switch(v.getId()){
+		case R.id.IVbattlefield:
+			display.setImageResource(R.drawable.back_battlefield);
+			break;
+		case R.id.IVblack:
+			display.setImageResource(R.drawable.back_black);
+			break;
+		case R.id.IVblue:
+			display.setImageResource(R.drawable.back_blue);
+			break;
+		case R.id.IVcity:
+			display.setImageResource(R.drawable.back_city);
+			break;
+		case R.id.IVmountain:
+			display.setImageResource(R.drawable.back_mountain);
+			break;
+		case R.id.IVwalle:
+			display.setImageResource(R.drawable.back_walle);
+			break;
+		}
+	}
+}

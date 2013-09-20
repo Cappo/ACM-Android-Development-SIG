@@ -1,0 +1,58 @@
+package com.example.cappo;
+
+import com.example.cappo.SurfaceViewExample.OurView;
+
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+
+public class Sprite {
+
+	int x, y, height, width, xSpeed, ySpeed;
+	Bitmap b;
+	OurView ov;
+	
+	public Sprite(OurView ourView, Bitmap blob) {
+		// TODO Auto-generated constructor stub
+		b = blob;
+		ov = ourView;
+		height = b.getHeight();
+		width = b.getWidth();
+		x = y = 0;
+		xSpeed = 5;
+		ySpeed = 0;
+	}
+	
+	private void update() {
+		// TODO Auto-generated method stub
+		if(x > ov.getWidth() - width - xSpeed){
+			xSpeed = 0;
+			ySpeed = 5;
+		}
+		if(y > ov.getHeight() - height - ySpeed){
+			xSpeed = -5;
+			ySpeed = 0;
+		}
+		if(x + xSpeed < 0){
+			x = 0;
+			xSpeed = 0;
+			ySpeed = -5;
+		}
+		if(y + ySpeed < 0){
+			y = 0;
+			xSpeed = 5;
+			ySpeed = 0;
+		}
+		
+		x += xSpeed;
+		y += ySpeed;
+	}
+	
+	public void onDraw(Canvas canvas) {
+		// TODO Auto-generated method stub
+		update();
+		Rect src = new Rect(0, 0, width, height);
+		Rect dst = new Rect(x, y, x+width, y+height);
+		canvas.drawBitmap(b, src, dst, null);
+	}
+}

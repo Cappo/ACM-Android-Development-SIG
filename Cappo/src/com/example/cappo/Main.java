@@ -1,0 +1,71 @@
+package com.example.cappo;
+
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.Handler;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.Menu;
+import android.view.Window;
+
+public class Main extends Activity {
+	MediaPlayer music;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.splash);
+		
+		music = MediaPlayer.create(Main.this, R.raw.strongrock);
+		music.start();
+		
+		Runnable timer = new Runnable(){
+			@Override
+			public void run(){
+				try{
+					synchronized(this){
+						wait(5000);
+					}
+					Intent MenuIntent = new Intent("com.example.cappo.SELECT");
+					startActivity(MenuIntent);
+				} 
+				catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				finally{
+					finish();
+				}
+			}
+		};
+		
+		Handler timerH = new Handler();
+		timerH.postDelayed(timer, 3000);
+		
+		//timer.run();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		music.release();
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		music.release();
+	}
+
+}

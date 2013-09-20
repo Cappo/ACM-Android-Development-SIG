@@ -1,0 +1,18 @@
+package com.example.cappo;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.VideoView;
+
+public class Tutorial6 extends Activity {
+	VideoView vid;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.tutorial6);
+		vid = (VideoView)findViewById(R.id.videoView1);
+	}
+	
+}

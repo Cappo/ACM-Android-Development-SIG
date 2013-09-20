@@ -1,0 +1,75 @@
+package com.example.cappo;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.os.Bundle;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+
+public class SurfaceViewExample extends Activity {
+
+	OurView v;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		v = new OurView(this);
+		
+		setContentView(v);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		v.pause();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		v.resume();
+	}
+
+	public class OurView extends SurfaceView implements Runnable{
+		
+		Thread t = null;
+		SurfaceHolder holder;
+		boolean isItOK = false;
+
+		public OurView(Context context) {
+			super(context);
+			holder = getHolder();
+		}
+		
+		public void run(){
+			while(isItOK == true){
+				//perform canvas drawing
+				if(!holder.getSurface().isValid()) continue;
+				//lock your room door, do your painting, then unlock to show everybody!
+				Canvas c = holder.lockCanvas();
+				c.drawARGB(255, 150, 150, 10);
+			}
+		}
+		
+		public void pause(){
+			isItOK = false;
+			while(true){
+				try{
+					t.join();
+				} catch(InterruptedException e){
+					e.printStackTrace();
+				}
+				break;
+			}
+			t = null;
+		}
+		
+		public void resume(){
+			isItOK = true;
+			t = new Thread(this);
+			t.start();
+		}
+	}
+	
+}
